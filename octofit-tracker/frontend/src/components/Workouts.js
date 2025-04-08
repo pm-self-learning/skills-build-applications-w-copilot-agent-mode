@@ -4,7 +4,7 @@ function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('https://symmetrical-space-orbit-p65g7pgjw7439649-8000.app.github.dev/api/workouts')
+    fetch('https://symmetrical-space-orbit-p65g7pgjw7439649-8000.app.github.dev/api/workouts/')
       .then(response => response.json())
       .then(data => setWorkouts(data));
   }, []);
