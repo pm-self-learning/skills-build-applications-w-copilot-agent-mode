@@ -6,13 +6,16 @@ from .models import User, Team, Activity, Leaderboard, Workout
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    return Response({
-        'users': 'api/users/',
-        'teams': 'api/teams/',
-        'activities': 'api/activities/',
-        'leaderboard': 'api/leaderboard/',
-        'workouts': 'api/workouts/'
-    })
+    base_url = request.build_absolute_uri('/')
+    if 'symmetrical-space-orbit-p65g7pgjw7439649-8000.app.github.dev' in base_url or 'localhost:8000' in base_url:
+        return Response({
+            'users': f'{base_url}api/users/',
+            'teams': f'{base_url}api/teams/',
+            'activities': f'{base_url}api/activities/',
+            'leaderboard': f'{base_url}api/leaderboard/',
+            'workouts': f'{base_url}api/workouts/'
+        })
+    return Response({'error': 'Invalid host'}, status=400)
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()

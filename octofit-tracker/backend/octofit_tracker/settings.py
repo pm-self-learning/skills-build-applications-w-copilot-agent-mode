@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-+8rn)avi+_x_&p0g4nj@wcs2h2z#r+$b9b=p!ey%xz)dz_p#!+
 DEBUG = True
 
 # Allow all hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['symmetrical-space-orbit-p65g7pgjw7439649-8000.app.github.dev', 'localhost']
 
 
 # Application definition
